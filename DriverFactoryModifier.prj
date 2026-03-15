@@ -9,7 +9,7 @@
    <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
    <modifiedEdition>ENTERPRISE</modifiedEdition>
-   <modifiedVersion>10.4.2</modifiedVersion>
+   <modifiedVersion>11.0.1</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
    <projectFileLocation>/Users/kazuakiurayama/katalon-workspace/DriverFactoryModifier/DriverFactoryModifier.prj</projectFileLocation>
    <sourceContent>
