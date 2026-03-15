@@ -2,17 +2,18 @@ package com.kazurayam.ks
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver
+
+import com.kms.katalon.core.driver.IDriverType;
+import com.kms.katalon.core.webui.driver.WebUIDriverType
+import com.kms.katalon.core.exception.StepFailedException;
 import com.kms.katalon.core.logging.LogLevel;
 import com.kms.katalon.core.webui.driver.DriverFactory;
-import com.kms.katalon.core.driver.IDriverType;
-import com.kms.katalon.core.exception.StepFailedException;
 
 public class DriverFactoryModifier {
 
-	public static boolean runWith(String browser) {
-		println "[DriverFactoryModifier#runWith] " + browser
+	public static void runWith(WebUIDriverType driverType) {
+		println "[DriverFactoryModifier#runWith] driverType: " + driverType.toString();
 		DriverFactory.metaClass.static.openWebDriver = { ->
-			println "[DriverFactory#openWebDriver] "
 			/**
 			 * Open a new WebDriver based on the RunConfiguration
 			 */
@@ -22,12 +23,13 @@ public class DriverFactoryModifier {
 					webDriver = DriverFactory.startExistingBrowser();
 				} else {
 					String remoteWebDriverUrl = DriverFactory.getRemoteWebDriverServerUrl();
-					if (StringUtils.isNotEmpty(remoteWebDriverUrl())) {
+					if (StringUtils.isNotEmpty(remoteWebDriverUrl)) {
 						webDriver = DriverFactory.startRemoteBrowser();
 					} else {
-						IDriverType executedBrowser = DriverFactory.getExecutedBrowser();
-						println "[DriverFactory++] executedBrowser: " + executedBrowser.getName();
-						webDriver = DriverFactory.startNewBrowser(executedBrowser);
+						// Here I hacked!
+						// webDriver = DriverFactory.startNewBrowser(DriverFactory.getExecutedBrowser());
+						webDriver = DriverFactory.startNewBrowser(driverType);
+						println "[DriverFactory#openWebDriver] driverType: " + driverType.toString();
 					}
 					DriverFactory.saveWebDriverSessionData(webDriver);
 					DriverFactory.changeWebDriver(webDriver);
@@ -38,7 +40,5 @@ public class DriverFactoryModifier {
 				throw new StepFailedException(e);
 			}
 		}
-		println "[DriverFactoryModifier] modified"
-		return true
 	}
 }
