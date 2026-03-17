@@ -46,7 +46,6 @@ public class DriverFactoryModifier {
 				throw new StepFailedException(e);
 			}
 		}
-		GroovyMetaClassInspector.inspect(DriverFactory.metaClass)
 	}
 	
 }

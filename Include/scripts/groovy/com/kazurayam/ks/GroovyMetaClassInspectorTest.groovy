@@ -12,7 +12,7 @@ public class GroovyMetaClassInspectorTest {
 
 	@Test
 	public void test_toJson() {
-		String json = GroovyMetaClassInspector.toJson(DriverFactory.metaClass)
+		String json = new GroovyMetaClassInspector().toJson(DriverFactory.metaClass)
 		println json
 	}
 	
