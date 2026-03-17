@@ -11,9 +11,9 @@ import com.kms.katalon.core.webui.driver.WebUIDriverType
 public class GroovyMetaClassInspectorTest {
 
 	@Test
-	public void testImplementation() {
-		DriverFactoryModifier.runWith(WebUIDriverType.FIREFOX_DRIVER)
-		GroovyMetaClassInspector.inspect(DriverFactory.metaClass)
+	public void test_toJson() {
+		String json = GroovyMetaClassInspector.toJson(DriverFactory.metaClass)
+		println json
 	}
 	
 }
