@@ -12,12 +12,14 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 public class DriverFactoryModifierTest {
 	
 	@Test
-	public void testSmoke() {
+	public void test_runWith() {
 		String jsonBefore = new GroovyMetaClassInspector().toJson(DriverFactory.metaClass)
 		println "BEFORE:\n" + jsonBefore
+		//println DriverFactory.hello("People")
 		DriverFactoryModifier.runWith(WebUIDriverType.FIREFOX_DRIVER)
 		String jsonAfter = new GroovyMetaClassInspector().toJson(DriverFactory.metaClass)
-		println "AFTER:\n" + jsonBefore
+		println "AFTER:\n" + jsonAfter
+		println DriverFactory.hello("World")
 	}
 	
 	/*

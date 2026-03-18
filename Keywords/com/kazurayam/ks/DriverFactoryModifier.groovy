@@ -18,6 +18,9 @@ public class DriverFactoryModifier {
 	 * @param driverType
 	 */
 	public static void runWith(WebUIDriverType driverType) {
+		DriverFactory.metaClass.static.hello = { String name ->
+			return "Hello, " + name
+		}
 		DriverFactory.metaClass.'static'.openWebDriver = { ->
 			/**
 			 * Open a new WebDriver based on the RunConfiguration
