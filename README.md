@@ -2,7 +2,7 @@
 
 In a Test Suite "TS2", I want to run Test Case "TC1" 3 times using diffent browser type: "Firefox", "Edge Chromium" and "Chrome.
 
-![image](https://kazurayam.github.io/DriverFactoryModifier/images/TS2.png)
+![image](https://kazurayam.github.io/SpecifyingBrowserForIndividualTestCasesWithinATestSuite/images/TS2.png)
 
 I have developed a few custom Groovy codes which enabled the "TS2" to run.
 
