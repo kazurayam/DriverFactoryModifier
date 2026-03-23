@@ -33,9 +33,12 @@ public class RunConfigurationModifierTest {
 		Files.createDirectories(outDir)
 		//
 		RunConfigurationModifier.apply()
+		RunConfigurationModifier.injectWebDriverPaths()
+		/*
 		RunConfiguration.injectWebDriverPath("${DriverFactory.CHROME_DRIVER_PATH_PROPERTY}", "${WebDriverPathHelper.getChromeDriverPath().toString()}")
 		RunConfiguration.injectWebDriverPath("${StringConstants.CONF_PROPERTY_GECKO_DRIVER_PATH}", "${WebDriverPathHelper.getFirefoxDriverPath().toString()}")
 		RunConfiguration.injectWebDriverPath("${DriverFactory.EDGE_CHROMIUM_DRIVER_PATH_PROPERTY}", "${WebDriverPathHelper.getEdgeChromiumDriverPath().toString()}")
+		*/
 	}
 	
 	@Test

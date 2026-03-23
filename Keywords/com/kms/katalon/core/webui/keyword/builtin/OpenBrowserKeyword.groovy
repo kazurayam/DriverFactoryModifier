@@ -21,6 +21,12 @@ import com.kms.katalon.core.webui.keyword.internal.WebUIKeywordMain
 import com.kms.katalon.core.webui.trace.HarTracer
 import com.kms.katalon.core.webui.trace.TraceSession
 
+/**
+ * Almost identical to the Katalon's original except that "@CompileStatic" annotations are commented out.
+ * This code was necessary to be in the Keywords folder so that a call to the `WebUI.openBrowser('')` keyword is linked with 
+ * the DriverFactory class modified by `DriverFactoryModifier.apply()`.
+ * If this code is not there, then a call to `WebUI.openBrowser()` will be linked to the Katalon's original `DriverFactory` implementation.
+ */
 
 @Action(value = "openBrowser")
 public class OpenBrowserKeyword extends WebUIAbstractKeyword {
@@ -43,11 +49,7 @@ public class OpenBrowserKeyword extends WebUIAbstractKeyword {
 	public void openBrowser(String rawUrl, FailureHandling flowControl) throws StepFailedException {
 		WebUIKeywordMain.runKeyword({
 			logger.logDebug(StringConstants.KW_LOG_INFO_OPENING_BROWSER)
-			println "[OpenBrowserKeyword#openBrowser] fired!"
-			println "[OpenBrowserKeyword#openBrowser] DriverFactory.getExecutedBrowser(): " + DriverFactory.getExecutedBrowser().toString()
-			println "[OpenBrowserKeyword#openBrowser] DriverFactory.isUsingExistingDriver(): " + DriverFactory.isUsingExistingDriver()
 			DriverFactory.openWebDriver()
-			println "[OpenBrowserKeyword#openBrowser] DriverFactory.getExecutedBrowser(): " + DriverFactory.getExecutedBrowser().toString()
 			if (rawUrl != null && !rawUrl.isEmpty()) {
 				try {
 					TraceSession session = (TraceSession) TraceHolder.session

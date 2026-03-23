@@ -26,6 +26,13 @@
       <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
+      <guid>eef6be6d-a136-4886-af79-37c4feef403b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/unittest/com.kazurayam.ks/RunConfigurationModifierTestRunner</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>false</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
       <guid>86bd594a-1867-441c-ae35-68feda43b1e1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

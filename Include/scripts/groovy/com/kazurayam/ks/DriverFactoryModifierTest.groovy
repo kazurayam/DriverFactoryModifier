@@ -18,7 +18,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 @RunWith(JUnit4.class)
 public class DriverFactoryModifierTest {
 	
-	@Ignore
 	@Test
 	public void test_apply() {
 		String json1 = new GroovyMetaClassInspector().toJson(DriverFactory.metaClass)
