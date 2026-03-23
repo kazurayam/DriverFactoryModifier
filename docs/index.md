@@ -645,4 +645,4 @@ I don’t think the original idea (run Test Cases with different borwser in a Te
 
 Nevertheless, it was technically interesting to develop this project. The `TS2` worked fine. So I am contented with this time of experiment. I would stop my hands on this project for now.
 
-The fact that `com.kms.katalon.core.webui.keyword.builtin.OpenBrowserKeyord` class is coded with `@CompileStatic` annotations --- this is a constraint for me. This makes my work very dirty. I do not like to publish this project because of this.
+The fact that `com.kms.katalon.core.webui.keyword.builtin.OpenBrowserKeyord` class is coded with `@CompileStatic` annotations --- this is a constraint for me. This makes my work very dirty. I do not like to publish this project to the Katalon Community forum because of this.
